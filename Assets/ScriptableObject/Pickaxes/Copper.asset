@@ -16,4 +16,4 @@ MonoBehaviour:
   power: 1.5
   interval: 0.8
   price: 10
-  sprite: {fileID: 0}
+  sprite: {fileID: -7449457009028752915, guid: 109dab7af3da158479364ee8255ca81c, type: 3}
