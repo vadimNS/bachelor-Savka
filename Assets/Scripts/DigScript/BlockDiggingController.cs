@@ -5,8 +5,9 @@ using UnityEngine.Tilemaps;
 public class BlockDiggingController : MonoBehaviour
 {
     private PlayerEconomy playerEconomy;
+    public PlayerEconomy PlayerEconomy => playerEconomy;
     [SerializeField] private Tilemap tilemap;
-
+    public PickaxeType CurrentPickaxeType => currentPickaxe.Type;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Transform digPoint; // Точка взаємодії (наприклад, руки)
 
@@ -14,8 +15,8 @@ public class BlockDiggingController : MonoBehaviour
 
     [SerializeField] private BreakingEffectController breakingEffect;
 
-    [SerializeField] private int slotCount = 5; // Змінюйте кількість слотів тут
-    [SerializeField] private GameObject inventoryPanel; // Об'єкт інвентаря
+    [SerializeField] private int slotCount = 5;
+
     [SerializeField] private PickaxeDatabase pickaxeDatabase; // Database кирок
     [SerializeField] private SelectedPickaxeSlotUI selectedPickaxeSlotUI; // Відображення поточної кирки
 
@@ -72,19 +73,7 @@ public class BlockDiggingController : MonoBehaviour
             damageTimer = 0f;
         }
 
-        // Продаж на P
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            playerEconomy.SellAllInventory();
 
-        }
-
-        // Відкривання/закривання інвентаря на I
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            if (inventoryPanel != null)
-                inventoryPanel.SetActive(!inventoryPanel.activeSelf);
-        }
 
         // Покупка кирок
         if (Input.GetKeyDown(KeyCode.Alpha1)) TryBuyPickaxe(PickaxeType.Wooden);
@@ -143,7 +132,7 @@ public class BlockDiggingController : MonoBehaviour
             breakingEffect.Hide();
         }
     }
-    private void TryBuyPickaxe(PickaxeType type)
+    public void TryBuyPickaxe(PickaxeType type)
     {
         Pickaxe newPick = pickaxes[type];
         if (currentPickaxe.Type == type)
