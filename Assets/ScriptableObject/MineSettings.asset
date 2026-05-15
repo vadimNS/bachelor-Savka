@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 37
   height: 100
-  coalChance: 0.05
-  "ironChan\u0441e": 0.03
-  "DiamondChan\u0441e": 0.01
+  coalChance: 0.03
+  "ironChan\u0441e": 0.02
+  "DiamondChan\u0441e": 0.005

@@ -62,12 +62,23 @@ public class ShopUI : MonoBehaviour
     {
         if (diggingController != null)
         {
-            // Викликаємо покупку (цей метод вже все перевіряє)
-            diggingController.TryBuyPickaxe(data.type);
+            var result = diggingController.TryBuyPickaxe(data.type);
+            if (result == BlockDiggingController.PurchaseResult.Success)
+            {
+                if (UIManager.Instance != null)
+                    UIManager.Instance.NoButton();
 
-            // Після покупки ховаємо панель опису (опціонально)
-            if (detailsPanel != null)
-                detailsPanel.Hide();
+                if (detailsPanel != null)
+                    detailsPanel.Hide();
+            }
+            else if (result == BlockDiggingController.PurchaseResult.NotEnoughMoney)
+            {
+                if (UIManager.Instance != null)
+                {
+                    UIManager.Instance.NoButton();
+                    UIManager.Instance.ShowEnoughMoneyPanel();
+                }
+            }
         }
         else
         {

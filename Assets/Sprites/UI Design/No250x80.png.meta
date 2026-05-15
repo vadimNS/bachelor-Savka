@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6eeb9f6758373694fb2c3d94eca4afa1
+guid: 8eada41be824b764eb98786c423dde29
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7076321639471244444
-    second: offground_0
+      213: -5253893410015752032
+    second: No250x80_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: offground_0
+      name: No250x80_0
       rect:
         serializedVersion: 2
-        x: 88
-        y: 145
-        width: 1360
-        height: 730
+        x: 0
+        y: 0
+        width: 254
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c94e7150a05243260800000000000000
-      internalID: 7076321639471244444
+      spriteID: 0a0de38a7cb6617b0800000000000000
+      internalID: -5253893410015752032
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      offground_0: 7076321639471244444
+      No250x80_0: -5253893410015752032
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

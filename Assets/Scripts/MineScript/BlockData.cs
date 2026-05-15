@@ -21,10 +21,10 @@ public class BlockData
         return type switch
         {
             BlockType.Dirt => 2,
-            BlockType.Stone => 4,
-            BlockType.Coal => 5,
-            BlockType.Iron => 8,
-            BlockType.Diamond => 1000,
+            BlockType.Stone => 5,
+            BlockType.Coal => 25,
+            BlockType.Iron => 50,
+            BlockType.Diamond => 200,
             _ => 1
         };
     }
@@ -36,7 +36,7 @@ public class BlockData
             BlockType.Stone => 2,
             BlockType.Coal => 4,
             BlockType.Iron => 8,
-            BlockType.Diamond => 100,
+            BlockType.Diamond => 20,
             _ => 0
         };
     }
