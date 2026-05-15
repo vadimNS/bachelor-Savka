@@ -123,23 +123,32 @@ public class BlockDiggingController : MonoBehaviour
             breakingEffect.Hide();
         }
     }
-    public void TryBuyPickaxe(PickaxeType type)
+    public enum PurchaseResult
+    {
+        Success,
+        AlreadyOwned,
+        NotEnoughMoney
+    }
+
+    public PurchaseResult TryBuyPickaxe(PickaxeType type)
     {
         Pickaxe newPick = pickaxes[type];
         if (currentPickaxe.Type == type)
         {
             Debug.Log($"You already own and use the {type} pickaxe.");
-            return;
+            return PurchaseResult.AlreadyOwned;
         }
 
         if (playerEconomy.TryBuyPickaxe(newPick))  // новий метод в PlayerEconomy
         {
             SetPickaxe(type);
             Debug.Log($"Bought and equipped {type} pickaxe.");
+            return PurchaseResult.Success;
         }
         else
         {
             Debug.Log($"Not enough coins to buy {type} pickaxe. Need: {newPick.Price}, Have: {playerEconomy.Coins}");
+            return PurchaseResult.NotEnoughMoney;
         }
     }
     public void LoadPickaxe(PickaxeType type)

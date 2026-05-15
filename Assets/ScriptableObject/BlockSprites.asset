@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1cb8a5f648a4a5429761c68f5e2c9fd, type: 3}
   m_Name: BlockSprites
   m_EditorClassIdentifier: Assembly-CSharp::BlockSprites
-  coalSprite: {fileID: 555232471, guid: 6b5e8466a5e441744849916e35fd0ea0, type: 3}
-  stoneSprite: {fileID: -6747518546239284149, guid: 2f597e01e1ac57244835b708350e3d14, type: 3}
+  coalSprite: {fileID: -228819513787663229, guid: e924dc7106612274a8334051b5893e16, type: 3}
+  stoneSprite: {fileID: -6369264306808514991, guid: 0eaef3946bc1c7142a2583e20607b276, type: 3}
   dirtSprite: {fileID: 925310841, guid: 112791e2b73d2be409845141f0dc0f36, type: 3}
-  ironSprite: {fileID: 376140721, guid: 6b5e8466a5e441744849916e35fd0ea0, type: 3}
+  ironSprite: {fileID: 5103231540499187363, guid: bd125ed063285fd4b9c04cc39646b3eb, type: 3}
   diamondSprite: {fileID: 1136970227, guid: 6b5e8466a5e441744849916e35fd0ea0, type: 3}
