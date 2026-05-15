@@ -15,7 +15,7 @@ public class CoinsUI : MonoBehaviour
 
     private void UpdateCoinsDisplay(int coins)
     {
-        coinsText.text = $"Coins: {coins}";
+        coinsText.text = $"{coins}";
     }
 
     private void OnDestroy()
