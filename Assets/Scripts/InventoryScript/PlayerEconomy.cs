@@ -2,7 +2,8 @@ public class PlayerEconomy
 {
     private Inventory inventory;
     private Wallet wallet;
-
+    public Inventory Inventory => inventory;
+    public Wallet Wallet => wallet;
     public PlayerEconomy(Inventory inventory, Wallet wallet)
     {
         this.inventory = inventory;

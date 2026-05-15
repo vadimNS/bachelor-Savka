@@ -23,4 +23,9 @@ public class Wallet
 
         return false;
     }
+    public void SetCoins(int amount)
+    {
+        coins = UnityEngine.Mathf.Max(0, amount);
+        OnCoinsChanged?.Invoke(coins);
+    }
 }

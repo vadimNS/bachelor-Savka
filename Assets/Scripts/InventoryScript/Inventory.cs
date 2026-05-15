@@ -46,7 +46,15 @@ public class Inventory
 
 
 
-
+    public void Clear()
+    {
+        foreach (var slot in slots)
+        {
+            slot.Type = null;
+            slot.Count = 0;
+        }
+        OnInventoryChanged?.Invoke();
+    }
 
     public int SellAll()
     {

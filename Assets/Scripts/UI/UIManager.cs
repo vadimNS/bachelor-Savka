@@ -10,6 +10,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject darkBackground;
     [SerializeField] private GameObject selectedPickaxeSlot;
 
+    [Header("Гравець")]
+    [SerializeField] private Transform playerTransform;
+    [SerializeField] private float teleportX = -3f;
+    [SerializeField] private float teleportY = 0.3f;
     // Зручні властивості для перевірки стану
     public bool IsInventoryOpen => playerInventoryPanel && playerInventoryPanel.activeSelf;
     public bool IsShopOpen => shopPanel && shopPanel.activeSelf;
@@ -76,5 +80,22 @@ public class UIManager : MonoBehaviour
         if (darkBackground) darkBackground.SetActive(false);
         // Слот кирки показуємо тільки якщо інвентар гравця також закритий
         if (selectedPickaxeSlot && !IsInventoryOpen) selectedPickaxeSlot.SetActive(true);
+    }
+
+
+    // ... решта коду (Awake, Start, Update, ToggleInventory, OpenShop, CloseShop) ...
+
+    // Новий метод для кнопки
+    public void TeleportToHome()
+    {
+        if (playerTransform != null)
+        {
+            playerTransform.position = new Vector3(teleportX, teleportY, 0);
+            Debug.Log($"Гравець телепортований на ({teleportX}, {teleportY}, 0)");
+        }
+        else
+        {
+            Debug.LogError("UIManager: playerTransform не призначено!");
+        }
     }
 }

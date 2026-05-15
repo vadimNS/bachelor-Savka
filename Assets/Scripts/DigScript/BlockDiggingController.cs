@@ -32,7 +32,7 @@ public class BlockDiggingController : MonoBehaviour
         mineData = data;
     }
 
-    private void Start()
+    private void Awake()
     {
         playerInventory = new Inventory(slotCount); // Передаємо slotCount
         Wallet wallet = new Wallet();
@@ -46,7 +46,7 @@ public class BlockDiggingController : MonoBehaviour
             inventoryUI.Initialize(playerInventory, wallet);
 
         InitializePickaxes();
-        SetPickaxe(PickaxeType.Diamond); // Стартова
+        SetPickaxe(PickaxeType.Stone); // Стартова
     }
     private void InitializePickaxes()
     {
@@ -72,15 +72,6 @@ public class BlockDiggingController : MonoBehaviour
         {
             damageTimer = 0f;
         }
-
-
-
-        // Покупка кирок
-        if (Input.GetKeyDown(KeyCode.Alpha1)) TryBuyPickaxe(PickaxeType.Wooden);
-        if (Input.GetKeyDown(KeyCode.Alpha2)) TryBuyPickaxe(PickaxeType.Copper);
-        if (Input.GetKeyDown(KeyCode.Alpha3)) TryBuyPickaxe(PickaxeType.Stone);
-        if (Input.GetKeyDown(KeyCode.Alpha4)) TryBuyPickaxe(PickaxeType.Iron);
-        if (Input.GetKeyDown(KeyCode.Alpha5)) TryBuyPickaxe(PickaxeType.Diamond);
     }
 
 
@@ -150,6 +141,10 @@ public class BlockDiggingController : MonoBehaviour
         {
             Debug.Log($"Not enough coins to buy {type} pickaxe. Need: {newPick.Price}, Have: {playerEconomy.Coins}");
         }
+    }
+    public void LoadPickaxe(PickaxeType type)
+    {
+        SetPickaxe(type);
     }
 
     private void SetPickaxe(PickaxeType type)
