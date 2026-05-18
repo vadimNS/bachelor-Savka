@@ -8,7 +8,17 @@ public enum PickaxeType
     Copper,
     Stone,
     Iron,
-    Diamond
+    Diamond,
+    Crystal,
+    Emerald,
+    Frost,
+    Magma,
+    Obisidian,
+    Ruby,
+    Sand,
+    Shadow,
+    Sun,
+    Void
 }
 public class Pickaxe
 {

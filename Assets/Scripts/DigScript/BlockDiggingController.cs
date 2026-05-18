@@ -46,7 +46,7 @@ public class BlockDiggingController : MonoBehaviour
             inventoryUI.Initialize(playerInventory, wallet);
 
         InitializePickaxes();
-        SetPickaxe(PickaxeType.Stone); // Стартова
+        SetPickaxe(PickaxeType.Wooden); // Стартова
     }
     private void InitializePickaxes()
     {

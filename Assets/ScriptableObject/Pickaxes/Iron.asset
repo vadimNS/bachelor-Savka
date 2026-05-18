@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PickaxeData
   type: 3
   power: 4
-  interval: 0.4
+  interval: 1.2
   price: 50
   sprite: {fileID: -3788526117380394678, guid: 85251939c659aa14483db594395c302f, type: 3}

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5c609d0a3c745b4e966b0b6910eddeb, type: 3}
-  m_Name: Copper
+  m_Name: Emerald
   m_EditorClassIdentifier: Assembly-CSharp::PickaxeData
-  type: 1
-  power: 1.5
-  interval: 1.4
-  price: 10
-  sprite: {fileID: -7449457009028752915, guid: 109dab7af3da158479364ee8255ca81c, type: 3}
+  type: 0
+  power: 15
+  interval: 1
+  price: 200
+  sprite: {fileID: 8835785904547117565, guid: df62b70f3ebba76488f0c817715160cc, type: 3}
