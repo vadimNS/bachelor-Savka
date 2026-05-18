@@ -8,11 +8,11 @@ public class BlockData
     public int Health;
     public int MaxHealth;
 
-    public BlockData(BlockType type, Vector2Int pos)
+    public BlockData(BlockType type, Vector2Int pos, float healthMultiplier = 1f)
     {
         Type = type;
         Position = pos;
-        MaxHealth = GetInitialHealth(type);
+        MaxHealth = Mathf.Max(1, Mathf.CeilToInt(GetInitialHealth(type) * healthMultiplier));
         Health = MaxHealth;
     }
 

@@ -10,6 +10,8 @@ public class MineRenderer : MonoBehaviour
     [SerializeField] private TileBase ironTile;
     [SerializeField] private TileBase DiamondTile;
 
+    [SerializeField] private float maxDepthTint = 0.05f;
+
     public void Render(BlockData[,] mineData)
     {
         tilemap.ClearAllTiles();
@@ -22,9 +24,17 @@ public class MineRenderer : MonoBehaviour
             for (int y = 0; y < height; y++)
             {
                 BlockData block = mineData[x, y];
-                TileBase tile = GetTileForBlock(block.Type);
+                TileBase tile = block != null ? GetTileForBlock(block.Type) : null;
+                Vector3Int cellPos = new Vector3Int(x, -y, 0);
 
-                tilemap.SetTile(new Vector3Int(x, -y, 0), tile);
+                tilemap.SetTile(cellPos, tile);
+                if (tile != null)
+                {
+                    float depthRatio = height > 1 ? (float)y / (height - 1) : 0f;
+                    float gray = depthRatio * maxDepthTint;
+                    Color tint = new Color(1f - gray, 1f - gray, 1f - gray, 1f);
+                    tilemap.SetColor(cellPos, tint);
+                }
             }
         }
 
