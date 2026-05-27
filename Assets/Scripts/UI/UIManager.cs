@@ -119,7 +119,7 @@ public class UIManager : MonoBehaviour
     }
     public void ExitButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
     public void BuyButton()
     {

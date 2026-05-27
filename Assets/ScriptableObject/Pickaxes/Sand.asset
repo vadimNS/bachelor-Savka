@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c609d0a3c745b4e966b0b6910eddeb, type: 3}
   m_Name: Sand
   m_EditorClassIdentifier: Assembly-CSharp::PickaxeData
-  type: 0
+  type: 11
   power: 35
   interval: 1
   price: 450

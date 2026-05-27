@@ -2179,7 +2179,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -9
   m_MaskInteraction: 0
   m_Sprite: {fileID: -7777335398517154035, guid: b18e2607dfd45a84cbcfa842101259b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3894,7 +3894,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3334738622998220081, guid: cb6a605d07d2ce94bae551fb56223771, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4179,6 +4179,7 @@ MonoBehaviour:
   dirtTile: {fileID: 11400000, guid: ffd94761ec4833d4db90a7c3edd6f0d0, type: 2}
   ironTile: {fileID: 11400000, guid: a6f41fd6ba2f6d64b9774793a827b7cd, type: 2}
   DiamondTile: {fileID: 11400000, guid: 06cbe3a841f742948b012057d558b2a0, type: 2}
+  maxDepthTint: 0.05
 --- !u!4 &1291032800
 Transform:
   m_ObjectHideFlags: 0

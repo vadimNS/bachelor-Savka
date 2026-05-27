@@ -38,7 +38,7 @@ public class ShopDetailsPanel : MonoBehaviour
 
 
         if (priceText != null)
-            priceText.text = $"Ціна: {data.price} монет\nСила: {data.power}\nШвидкість: {1f / data.interval:F1} уд/сек";
+            priceText.text = $"Price: {data.price} money\nPower: {data.power}\nSpeed: {1f / data.interval:F1} hits/sec";
     }
 
     // Викликається ззовні (наприклад, коли закриваєте вікно або нічого не вибрано)

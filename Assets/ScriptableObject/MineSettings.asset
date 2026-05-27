@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: MineSettings
   m_EditorClassIdentifier: 
   width: 370
-  height: 600
+  height: 100
   coalChance: 0.03
-  "ironChan\u0441e": 0.1
-  "DiamondChan\u0441e": 0.01
-  caveChance: 0.0053
-  caveSpread: 0.12
+  "ironChan\u0441e": 0.02
+  "DiamondChan\u0441e": 0.005
+  caveChance: 0.02
+  caveSpread: 0.2
   layerHeight: 75
