@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ShopUI : MonoBehaviour
 {
-    [SerializeField] private Transform slotsParent; // Де будуть слоти
-    [SerializeField] private GameObject slotPrefab; // Prefab слота з ShopSlotUI
+    [SerializeField] private Transform slotsParent; 
+    [SerializeField] private GameObject slotPrefab; 
     private BlockDiggingController diggingController;
     [SerializeField] private PickaxeDatabase pickaxeDatabase;
     [SerializeField] private ShopDetailsPanel detailsPanel;
@@ -19,18 +19,18 @@ public class ShopUI : MonoBehaviour
     {
         if (detailsPanel != null)
             detailsPanel.OnBuyClicked += HandleBuyClicked;
-        // Тимчасово – для тесту
+        
         Initialize(pickaxeDatabase);
         diggingController = FindFirstObjectByType<BlockDiggingController>();
     }
     private void RefreshShop()
     {
-        // Очистити старі слоти
+        
         foreach (var ui in slotUIs)
             Destroy(ui.gameObject);
         slotUIs.Clear();
 
-        // Створити слоти для кожної кирки
+        
         foreach (var pickaxeData in pickaxeDatabase.pickaxes)
         {
             var go = Instantiate(slotPrefab, slotsParent);
@@ -48,11 +48,11 @@ public class ShopUI : MonoBehaviour
         {
             detailsPanel.Show(data);
 
-            // Перевіряємо, чи це поточна кирка гравця
+            
             if (diggingController != null)
             {
-                // Тобі потрібно отримати поточний тип. Можна додати публічну властивість у BlockDiggingController:
-                // public PickaxeType CurrentPickaxeType => currentPickaxe.Type;
+                
+                
                 bool isCurrent = diggingController.CurrentPickaxeType == data.type;
                 detailsPanel.SetBuyInteractable(!isCurrent);
             }

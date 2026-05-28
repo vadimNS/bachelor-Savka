@@ -10,6 +10,10 @@ public class MineGenerationSettings : ScriptableObject
     [Range(0, 1)] public float ironChanсe = 0.1f;
     [Range(0, 1)] public float DiamondChanсe = 0.01f;
 
+    [Range(0f, 0.1f)] public float caveChance = 0.02f;
+    [Range(0f, 0.2f)] public float caveSpread = 0.12f;
+    [Range(1, 200)] public int layerHeight = 75;
+
     public BlockType GetRandomBlockType()
     {
         float roll = Random.value;

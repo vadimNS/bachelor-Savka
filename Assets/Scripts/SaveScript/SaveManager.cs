@@ -23,7 +23,7 @@ public class SaveManager : MonoBehaviour
 
         SaveData data = new SaveData();
 
-        // 1. Інвентар через властивість Inventory
+        
         Inventory inventory = diggingController.PlayerEconomy?.Inventory;
         if (inventory != null)
         {
@@ -39,13 +39,13 @@ public class SaveManager : MonoBehaviour
             }
         }
 
-        // 2. Монети
+        
         data.coins = diggingController.PlayerEconomy?.Coins ?? 0;
 
-        // 3. Тип кирки
+        
         data.pickaxeType = diggingController.CurrentPickaxeType.ToString();
 
-        // 4. Серіалізація та запис
+        
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(SaveFilePath, json);
         Debug.Log($"Game saved to {SaveFilePath}");
@@ -69,7 +69,7 @@ public class SaveManager : MonoBehaviour
             return;
         }
 
-        // 1. Відновлюємо інвентар
+        
         Inventory inventory = diggingController.PlayerEconomy?.Inventory;
         if (inventory != null && data.inventorySlots != null)
         {
@@ -91,11 +91,11 @@ public class SaveManager : MonoBehaviour
             inventory.OnInventoryChanged?.Invoke();
         }
 
-        // 2. Відновлюємо монети
+        
         Wallet wallet = diggingController.PlayerEconomy?.Wallet;
         wallet?.SetCoins(data.coins);
 
-        // 3. Відновлюємо кирку (використовуємо спеціальний метод, що не перевіряє гроші)
+        
         if (!string.IsNullOrEmpty(data.pickaxeType))
         {
             if (System.Enum.TryParse(data.pickaxeType, out PickaxeType type))

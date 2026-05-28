@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f78efd50c2861524ba6075e2dee1b6eb, type: 3}
   m_Name: MineSettings
   m_EditorClassIdentifier: 
-  width: 37
+  width: 370
   height: 100
   coalChance: 0.03
   "ironChan\u0441e": 0.02
   "DiamondChan\u0441e": 0.005
+  caveChance: 0.02
+  caveSpread: 0.2
+  layerHeight: 75

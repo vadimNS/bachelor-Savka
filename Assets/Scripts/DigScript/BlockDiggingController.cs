@@ -9,16 +9,16 @@ public class BlockDiggingController : MonoBehaviour
     [SerializeField] private Tilemap tilemap;
     public PickaxeType CurrentPickaxeType => currentPickaxe.Type;
     [SerializeField] private Camera mainCamera;
-    [SerializeField] private Transform digPoint; // Точка взаємодії (наприклад, руки)
+    [SerializeField] private Transform digPoint; 
 
-    [SerializeField] private float breakDistance = 1.5f; // Максимальна дистанція для руйнування
+    [SerializeField] private float breakDistance = 1.5f; 
 
     [SerializeField] private BreakingEffectController breakingEffect;
 
     [SerializeField] private int slotCount = 5;
 
-    [SerializeField] private PickaxeDatabase pickaxeDatabase; // Database кирок
-    [SerializeField] private SelectedPickaxeSlotUI selectedPickaxeSlotUI; // Відображення поточної кирки
+    [SerializeField] private PickaxeDatabase pickaxeDatabase; 
+    [SerializeField] private SelectedPickaxeSlotUI selectedPickaxeSlotUI; 
 
     private Inventory playerInventory;
     private Pickaxe currentPickaxe;
@@ -34,7 +34,7 @@ public class BlockDiggingController : MonoBehaviour
 
     private void Awake()
     {
-        playerInventory = new Inventory(slotCount); // Передаємо slotCount
+        playerInventory = new Inventory(slotCount); 
         Wallet wallet = new Wallet();
         var coinsUI = FindAnyObjectByType<CoinsUI>();
         if (coinsUI != null)
@@ -46,7 +46,7 @@ public class BlockDiggingController : MonoBehaviour
             inventoryUI.Initialize(playerInventory, wallet);
 
         InitializePickaxes();
-        SetPickaxe(PickaxeType.Wooden); // Стартова
+        SetPickaxe(PickaxeType.Wooden); 
     }
     private void InitializePickaxes()
     {
@@ -85,7 +85,7 @@ public class BlockDiggingController : MonoBehaviour
         if (mineData == null) return;
         if (x < 0 || y < 0 || x >= mineData.GetLength(0) || y >= mineData.GetLength(1)) return;
 
-        // Прямокутна перевірка відстані
+        
         Vector3 blockWorldCenter = tilemap.GetCellCenterWorld(cellPos);
         Vector2 delta = blockWorldCenter - digPoint.position;
 
@@ -109,8 +109,8 @@ public class BlockDiggingController : MonoBehaviour
         Debug.Log($"Block {block.Type} at {cellPos} damaged. Health: {block.Health}");
 
         float progress = 1f - (float)block.Health / block.MaxHealth;
-        breakingEffect.Show(blockWorldCenter); // Телепортуємо ефект
-        breakingEffect.SetProgress(progress);  // Ставимо кадр
+        breakingEffect.Show(blockWorldCenter); 
+        breakingEffect.SetProgress(progress);  
 
         if (block.Health <= 0)
         {
@@ -139,7 +139,7 @@ public class BlockDiggingController : MonoBehaviour
             return PurchaseResult.AlreadyOwned;
         }
 
-        if (playerEconomy.TryBuyPickaxe(newPick))  // новий метод в PlayerEconomy
+        if (playerEconomy.TryBuyPickaxe(newPick))  
         {
             SetPickaxe(type);
             Debug.Log($"Bought and equipped {type} pickaxe.");

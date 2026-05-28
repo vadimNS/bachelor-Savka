@@ -10,7 +10,7 @@ public class SceneMove : MonoBehaviour
     [SerializeField] private Slider loadingSlider;
     [SerializeField] private Text loadingText;
 
-    private const string TARGET_SCENE = "MainGame"; // <-- ЗАМІНІТЬ НА НАЗВУ ВАШОЇ СЦЕНИ
+    private const string TARGET_SCENE = "MainGame"; 
 
     public void SceneTransition()
     {
@@ -22,22 +22,22 @@ public class SceneMove : MonoBehaviour
 
     IEnumerator LoadSceneAsync(string sceneName)
     {
-        // Завантажуємо сцену асинхронно, дозволяємо активацію автоматично
+        
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
 
-        // Якщо сцена не може завантажитися (наприклад, немає в Build), вийдемо
+        
         if (operation == null)
         {
             Debug.LogError($"Не вдалося завантажити сцену: {sceneName}");
             yield break;
         }
 
-        // Не забороняємо активацію — сцена сама перемкнеться, коли буде готова
-        // operation.allowSceneActivation залишається true за замовчуванням
+        
+        
 
         while (!operation.isDone)
         {
-            // progress іде від 0 до 1 (якщо allowSceneActivation = true)
+            
             float progress = Mathf.Clamp01(operation.progress);
 
             if (loadingSlider != null)
@@ -48,6 +48,6 @@ public class SceneMove : MonoBehaviour
             yield return null;
         }
 
-        // Тут сцена вже завантажилась, UI зникне разом зі старою сценою
+        
     }
 }

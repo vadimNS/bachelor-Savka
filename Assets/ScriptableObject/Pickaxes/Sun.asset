@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c609d0a3c745b4e966b0b6910eddeb, type: 3}
   m_Name: Sun
   m_EditorClassIdentifier: Assembly-CSharp::PickaxeData
-  type: 0
+  type: 13
   power: 45
   interval: 1
   price: 550
-  sprite: {fileID: -2477436565474627136, guid: 5d35f25ba6ae6ec4d960e4987a0bf07a, type: 3}
+  sprite: {fileID: -1197499949098313614, guid: 973f40d3d133f7941b14d36d6d896b4c, type: 3}

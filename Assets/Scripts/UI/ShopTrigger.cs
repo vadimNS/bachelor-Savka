@@ -6,11 +6,11 @@ public class ShopTrigger : MonoBehaviour
     {
         if (UIManager.Instance == null) return;
 
-        // Якщо відкрито інвентар гравця – не даємо відкрити магазин
+        
         if (UIManager.Instance.IsInventoryOpen)
             return;
 
-        // Якщо магазин уже відкрито – закриваємо його, інакше відкриваємо
+        
         if (UIManager.Instance.IsShopOpen)
             UIManager.Instance.CloseShop();
         else

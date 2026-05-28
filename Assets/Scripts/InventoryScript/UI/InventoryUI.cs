@@ -4,7 +4,7 @@ using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
-    [SerializeField] private Transform slotsParent; // де будуть слоти
+    [SerializeField] private Transform slotsParent; 
     [SerializeField] private GameObject slotPrefab;
     [SerializeField] private TMP_Text coinsText;
 
@@ -26,12 +26,12 @@ public class InventoryUI : MonoBehaviour
 
     private void RefreshInventory()
     {
-        // Очистити старі слоти
+        
         foreach (var ui in slotUIs)
             Destroy(ui.gameObject);
         slotUIs.Clear();
 
-        // Створити нові слоти під кожен логічний слот
+        
         for (int i = 0; i < inventory.SlotCount; i++)
         {
             var go = Instantiate(slotPrefab, slotsParent);

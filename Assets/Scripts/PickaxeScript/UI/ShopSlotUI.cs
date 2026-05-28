@@ -4,12 +4,12 @@ using UnityEngine.EventSystems;
 
 public class ShopSlotUI : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private Image iconImage;          // компонент Image для спрайту кирки
+    [SerializeField] private Image iconImage;          
 
-    private PickaxeData currentData;                   // дані, які слот показує
-    public System.Action<PickaxeData> OnSlotClicked;   // подія, яку слухатиме ShopUI
+    private PickaxeData currentData;                   
+    public System.Action<PickaxeData> OnSlotClicked;   
 
-    // Викликається із ShopUI під час створення слота
+    
     public void Initialize(PickaxeData data)
     {
         currentData = data;
@@ -17,7 +17,7 @@ public class ShopSlotUI : MonoBehaviour, IPointerClickHandler
             iconImage.sprite = data.sprite;
     }
 
-    // Автоматичний виклик Unity при кліку на слоті
+    
     public void OnPointerClick(PointerEventData eventData)
     {
         OnSlotClicked?.Invoke(currentData);
