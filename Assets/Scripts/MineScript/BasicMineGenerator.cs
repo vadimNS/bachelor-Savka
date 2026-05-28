@@ -37,7 +37,7 @@ public class BasicMineGenerator : IMineGenerator
 
                 BlockType type;
 
-                // Якщо рядок у верхніх двох — завжди Dirt
+                
                 if (y < 2)
                 {
                     type = BlockType.Dirt;

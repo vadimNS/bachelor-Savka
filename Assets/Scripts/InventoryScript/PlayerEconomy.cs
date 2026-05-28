@@ -21,12 +21,12 @@ public class PlayerEconomy
     {
         if (pickaxe.Price == 0 || wallet.SpendCoins(pickaxe.Price))
         {
-            // Тут можна також оновити поточну кирку, але це вже інша відповідальність
+            
             return true;
         }
         return false;
     }
 
     public int Coins => wallet.Coins;
-    // Можна також додавати методи для перевірки, чи вистачає монет
+    
 }

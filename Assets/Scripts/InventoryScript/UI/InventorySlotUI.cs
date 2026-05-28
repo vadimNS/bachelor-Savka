@@ -6,7 +6,7 @@ public class InventorySlotUI : MonoBehaviour
 {
     [SerializeField] private Image icon;
     [SerializeField] private TMP_Text countText;
-    [SerializeField] private BlockSprites blockSprites; // Додайте це поле
+    [SerializeField] private BlockSprites blockSprites; 
     private InventorySlot slot;
 
     public void Initialize(InventorySlot slot)
@@ -25,7 +25,7 @@ public class InventorySlotUI : MonoBehaviour
         else
         {
             icon.gameObject.SetActive(true);
-            // Тут потрібно отримати спрайт за типом блоку
+            
             icon.sprite = blockSprites.GetSprite(slot.Type.Value);
             countText.text = slot.Count.ToString();
         }

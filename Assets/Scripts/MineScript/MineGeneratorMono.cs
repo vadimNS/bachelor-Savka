@@ -4,7 +4,7 @@ public class MineGeneratorMono : MonoBehaviour
 {
     [SerializeField] private MineGenerationSettings settings;
     [SerializeField] private MineRenderer renderers;
-    [SerializeField] private BlockDiggingController blockDiggingController; // ← нове
+    [SerializeField] private BlockDiggingController blockDiggingController; 
 
     private void Start()
     {
@@ -12,6 +12,6 @@ public class MineGeneratorMono : MonoBehaviour
         var mineData = generator.Generate();
 
         renderers.Render(mineData);
-        blockDiggingController.SetMineData(mineData); // ← передаємо дані копання
+        blockDiggingController.SetMineData(mineData); 
     }
 }

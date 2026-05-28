@@ -21,7 +21,7 @@ public class InventorySlot
         else if (CanStack(type))
         {
             Count = Mathf.Min(64, Count + amount);
-            //hello
+            
         }
     }
 

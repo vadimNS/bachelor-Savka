@@ -30,16 +30,16 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
-        // Перевірка, чи стоїмо на землі
+        
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        // Запит на стрибок
+        
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             jumpRequested = true;
         }
 
-        // Поворот гравця
+        
         if (horizontalInput < 0 && !facingRight)
         {
             Flip();
@@ -52,17 +52,17 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Горизонтальний рух
+        
         rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
 
-        // Стрибок
+        
         if (jumpRequested)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpRequested = false;
         }
 
-        // Анімація
+        
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
         animator.SetBool("IsGrounded", isGrounded);
     }
